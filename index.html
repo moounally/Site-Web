@@ -3,10 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site</title>
+    <title>Jeu "T'as pas vu venir"</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff3b2f;
+            transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .game-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+            color: #f0f0f0;
+        }
+
+        .mode-description {
+            color: #dfe6e9;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur mon site</h1>
-    <p>Ceci est mon premier site.</p>
+    <h1>Jeu "T'as pas vu venir"</h1>
+    <p>Bienvenue dans le jeu le plus imprévisible de votre vie. Choisissez votre aventure et laissez-vous surprendre !</p>
+    <button id="start-btn">Commencer le jeu</button>
+    
+    <div id="game-section" class="hidden">
+        <p>Choisissez un mode de jeu :</p>
+        <div class="game-options">
+            <button id="mode1">Mode Aventure</button>
+            <button id="mode2">Mode Stratégie</button>
+            <button id="mode3">Mode Survie</button>
+        </div>
+        <p id="description" class="mode-description hidden"></p>
+    </div>
+
+    <footer>
+        &copy; 2024 - Jeu "T'as pas vu venir". Tous droits réservés.
+    </footer>
+
+    <script>
+        const startButton = document.getElementById('start-btn');
+        const gameSection = document.getElementById('game-section');
+        const description = document.getElementById('description');
+
+        const modes = {
+            mode1: "Plongez dans une quête pleine de surprises et d'énigmes à résoudre.",
+            mode2: "Réfléchissez à vos actions et planifiez pour triompher.",
+            mode3: "Tenez bon face aux défis les plus imprévisibles !"
+        };
+
+        startButton.addEventListener('click', () => {
+            startButton.classList.add('hidden');
+            gameSection.classList.remove('hidden');
+        });
+
+        document.getElementById('mode1').addEventListener('click', () => {
+            description.textContent = modes.mode1;
+            description.classList.remove('hidden');
+        });
+
+        document.getElementById('mode2').addEventListener('click', () => {
+            description.textContent = modes.mode2;
+            description.classList.remove('hidden');
+        });
+
+        document.getElementById('mode3').addEventListener('click', () => {
+            description.textContent = modes.mode3;
+            description.classList.remove('hidden');
+        });
+    </script>
 </body>
 </html>
