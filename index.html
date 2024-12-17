@@ -3,133 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeu "T'as pas vu venir"</title>
+    <title>T'as Pas Vu Venir - Accueil</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #67fac9, #3e63f7a8);
-            color: #333;
+        /* Modern and Minimalist Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        p {
-            font-size: 1.5rem;
-            color: #f0f0f0;
-            margin-bottom: 20px;
             text-align: center;
         }
 
-        button {
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            color: white;
-            background-color: #ff6f61;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #ff3b2f;
-            transform: scale(1.1);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .game-options {
+        header {
+            width: 100%;
             display: flex;
-            gap: 20px;
-            margin-top: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header .logo {
+            width: 80px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        main h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        main p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #ff6f61;
+            border-radius: 50px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease 0s;
+        }
+
+        .btn:hover {
+            background-color: #ff3b2f;
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
         }
 
         footer {
             position: absolute;
-            bottom: 20px;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
             font-size: 0.9rem;
-            color: #f0f0f0;
-        }
-
-        .mode-description {
-            color: #dfe6e9;
-            font-size: 1rem;
-            margin-top: 10px;
-        }
-
-        .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <img src="logo.jpg" alt="Logo du jeu" class="logo">
-    <h1>Jeu "T'as pas vu venir"</h1>
-    <p>Bienvenue dans le jeu le plus imprévisible de votre vie. Choisissez votre aventure et laissez-vous surprendre !</p>
-    <button id="start-btn">Commencer le jeu</button>
-    
-    <div id="game-section" class="hidden">
-        <p>Choisissez un mode de jeu :</p>
-        <div class="game-options">
-            <button id="mode1">Mode Aventure</button>
-            <button id="mode2">Mode Stratégie</button>
-            <button id="mode3">Mode Survie</button>
-        </div>
-        <p id="description" class="mode-description hidden"></p>
-    </div>
+    <!-- Header with Logo and Navigation -->
+    <header>
+        <img src="logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="ateliers.html">Ateliers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Main Content -->
+    <main>
+        <h1>T'as Pas Vu Venir</h1>
+        <p>Un jeu immersif pour explorer, comprendre et relever les défis invisibles rencontrés au quotidien. Plongez dans une expérience unique et ludique.</p>
+        <a href="presentation.html" class="btn">Découvrir le jeu</a>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2024 - Jeu "T'as pas vu venir". Tous droits réservés.
+        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
     </footer>
-
-    <script>
-        const startButton = document.getElementById('start-btn');
-        const gameSection = document.getElementById('game-section');
-        const description = document.getElementById('description');
-
-        const modes = {
-            mode1: "Plongez dans une quête pleine de surprises et d'énigmes à résoudre.",
-            mode2: "Réfléchissez à vos actions et planifiez pour triompher.",
-            mode3: "Tenez bon face aux défis les plus imprévisibles !"
-        };
-
-        startButton.addEventListener('click', () => {
-            startButton.classList.add('hidden');
-            gameSection.classList.remove('hidden');
-        });
-
-        document.getElementById('mode1').addEventListener('click', () => {
-            description.textContent = modes.mode1;
-            description.classList.remove('hidden');
-        });
-
-        document.getElementById('mode2').addEventListener('click', () => {
-            description.textContent = modes.mode2;
-            description.classList.remove('hidden');
-        });
-
-        document.getElementById('mode3').addEventListener('click', () => {
-            description.textContent = modes.mode3;
-            description.classList.remove('hidden');
-        });
-    </script>
 </body>
 </html>
