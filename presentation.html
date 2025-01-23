@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Présentation - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -14,8 +18,9 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
                 <li><a href="ateliers.html">Ateliers</a></li>
-                <li><a href="témoignages.html">Témoignages</a></li>
+                <li><a href="temoignages.html">Témoignages</a></li>
                 <li><a href="ressources.html">Ressources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -23,14 +28,22 @@
     </header>
 
     <main>
-        <h1>Présentation du Jeu</h1>
-        <p>Le jeu <strong>"T'as Pas Vu Venir"</strong> vise à sensibiliser le public aux défis quotidiens des personnes malvoyantes.</p>
-        <p>À travers des expériences immersives et interactives, vous serez invité à explorer le monde autrement en utilisant vos sens alternatifs.</p>
-        <video controls class="intro-video">
-            <source src="assets/vidéos/intro.mp4" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture des vidéos.
-        </video>
-        <a href="ateliers.html" class="btn">Explorer les Ateliers</a>
+        <section class="presentation" data-aos="fade-in">
+            <h1>Présentation du Jeu</h1>
+            <p>Le jeu <strong>"T’as Pas Vu Venir !"</strong> vise à sensibiliser le public aux défis quotidiens des personnes malvoyantes ou non-voyantes. À travers des expériences immersives et interactives, les participants explorent un monde où la vision est limitée, utilisant leurs autres sens pour surmonter des obstacles.</p>
+            <img src="images/presentation-image.jpg" alt="Présentation du jeu" class="responsive-img">
+            <a href="ateliers.html" class="btn">Explorer les Ateliers</a>
+        </section>
+
+        <section class="objectifs" data-aos="fade-up">
+            <h2>Objectifs du Jeu</h2>
+            <ul>
+                <li><strong>Sensibilisation :</strong> Exposer les défis quotidiens des personnes non-voyantes pour éveiller la conscience collective.</li>
+                <li><strong>Immersion :</strong> Créer un environnement où les joueurs utilisent leurs autres sens pour surmonter des obstacles.</li>
+                <li><strong>Éducation :</strong> Proposer une plateforme pédagogique pour encourager l’inclusion et l’accessibilité.</li>
+                <li><strong>Collaboration :</strong> Mettre l’accent sur l’importance de l’entraide et de la communication dans des situations complexes.</li>
+            </ul>
+        </section>
     </main>
 
     <footer>

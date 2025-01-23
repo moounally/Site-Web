@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Démos et Ressources - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -14,8 +18,9 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
                 <li><a href="ateliers.html">Ateliers</a></li>
-                <li><a href="témoignages.html">Témoignages</a></li>
+                <li><a href="temoignages.html">Témoignages</a></li>
                 <li><a href="ressources.html">Ressources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -23,17 +28,21 @@
     </header>
 
     <main>
-        <h1>Démos et Ressources</h1>
+        <section class="ressources-header" data-aos="fade-in">
+            <h1>Démos et Ressources</h1>
+            <p>Accédez à nos démonstrations, testez vos connaissances et téléchargez des ressources supplémentaires.</p>
+        </section>
 
-        <section class="demo">
+        <section class="demo" data-aos="fade-up">
             <h2>Démonstration du Jeu</h2>
-            <video controls>
-                <source src="assets/vidéos/demo-jeu.mp4" type="video/mp4">
+            <p>Découvrez une démonstration vidéo de notre jeu sérieux.</p>
+            <video controls class="responsive-img">
+                <source src="assets/videos/demo-jeu.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la lecture des vidéos.
             </video>
         </section>
 
-        <section class="quiz">
+        <section class="quiz" data-aos="fade-up">
             <h2>Quiz : Testez vos connaissances</h2>
             <form id="quiz-form" aria-label="Quiz sur le handicap visuel">
                 <p>1. Combien de personnes sont concernées par le handicap visuel dans le monde ?</p>
@@ -51,13 +60,16 @@
             <div id="quiz-result"></div>
         </section>
 
-        <section class="resources">
+        <section class="resources" data-aos="fade-up">
             <h2>Ressources Supplémentaires</h2>
             <ul>
-                <li><a href="https://www.article1.com" target="_blank">Article 1</a></li>
-                <li><a href="https://www.video1.com" target="_blank">Vidéo 1</a></li>
-                <li><a href="docs/guide-jeu.pdf" download>Télécharger le Guide du Jeu (PDF)</a></li>
-                <!-- Ajoutez d'autres ressources si nécessaire -->
+                <li><a href="https://www.com-unedifference.com/atelier-de-sensibilisation-handicap-visuel/" target="_blank">Atelier de Sensibilisation au Handicap Visuel</a></li>
+                <li><a href="https://www.crn-handicap.fr/ressources/les-amenagements-pour-les-personnes-aveugles-ou-malvoyantes" target="_blank">Aménagements Inclusifs</a></li>
+                <li><a href="https://www.accessibilite-dv.fr/accessibilite-erp-aveugles-malvoyants-cheminements-exterieurs/" target="_blank">Accessibilité des Cheminements Extérieurs</a></li>
+                <li><a href="https://www.accessibilite-dv.fr/accessibilite-erp-aveugles-malvoyants-entree-accueil/" target="_blank">Accessibilité des Entrées et Accueils</a></li>
+                <li><a href="https://www.accessibilite-dv.fr/accessibilite-erp-aveugles-malvoyants-circulations-horizontales-et-verticales/" target="_blank">Accessibilité des Circulations</a></li>
+                <li><a href="https://studentaffairs.vancouver.wsu.edu/access-center/etiquette-interacting-people-who-are-blind-who-have-low-vision" target="_blank">Étiquette d’Interaction Respectueuse</a></li>
+                <li><a href="assets/documents/guide-jeu.pdf" download>Télécharger le Guide du Jeu (PDF)</a></li>
             </ul>
         </section>
     </main>

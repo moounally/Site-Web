@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Ateliers - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -14,8 +18,9 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
                 <li><a href="ateliers.html">Ateliers</a></li>
-                <li><a href="témoignages.html">Témoignages</a></li>
+                <li><a href="temoignages.html">Témoignages</a></li>
                 <li><a href="ressources.html">Ressources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -23,29 +28,66 @@
     </header>
 
     <main>
-        <h1>Les Ateliers</h1>
+        <section class="ateliers-header" data-aos="fade-in">
+            <h1>Les Ateliers</h1>
+            <p>Découvrez les différentes activités immersives conçues pour vous sensibiliser aux défis rencontrés par les personnes malvoyantes ou non-voyantes.</p>
+        </section>
 
-        <section class="atelier">
+        <section class="atelier" data-aos="fade-up">
             <h2>Atelier 1 : La Chambre des Textures</h2>
-            <p>Objectif : Identifier et manipuler des objets grâce à leurs textures dans une pièce les yeux bandés.</p>
-            <img src="images/chambre-textures.jpg" alt="Chambre des Textures">
+            <p><strong>Objectif :</strong> Identifier et manipuler des objets cachés grâce à leur texture.</p>
+            <img src="images/chambre-textures.jpg" alt="Chambre des Textures" class="responsive-img">
+            <ul>
+                <li>Explorer tactiquement les surfaces pour retrouver des objets spécifiques.</li>
+                <li>Utiliser les textures des objets (bois, métal, tissu) pour différencier et sélectionner les éléments pertinents.</li>
+            </ul>
+            <h3>Exemples d’énigmes :</h3>
+            <ul>
+                <li>Repérer une clé cachée parmi d’autres objets uniquement au toucher.</li>
+                <li>Identifier un objet générant un son ou une vibration spécifique.</li>
+            </ul>
+            <p><strong>Durée estimée :</strong> 20 minutes.</p>
             <button class="btn-interactif" id="texture-simulation">Simuler la Chambre</button>
         </section>
 
-        <section class="atelier">
-            <h2>Atelier 2 : Le Parcours Sensoriel</h2>
-            <p>Objectif : Parcourir un chemin semé d'obstacles en utilisant uniquement des indices sonores ou tactiles.</p>
-            <img src="images/parcours-sensoriel.jpg" alt="Parcours Sensoriel">
+        <section class="atelier" data-aos="fade-up">
+            <h2>Atelier 2 : Le Parcours Sensoriel avec Obstacles</h2>
+            <p><strong>Objectif :</strong> Parcourir un chemin semé d’obstacles en utilisant une canne et des indices sonores ou tactiles pour se repérer.</p>
+            <img src="images/parcours-sensoriel.jpg" alt="Parcours Sensoriel" class="responsive-img">
+            <ul>
+                <li>Identifier les obstacles en se basant sur les indices tactiles ou sonores.</li>
+                <li>Naviguer efficacement en écoutant les consignes d’un coéquipier ou en utilisant un dispositif simulant une aide sonore.</li>
+            </ul>
+            <h3>Exemples d’énigmes :</h3>
+            <ul>
+                <li>Utiliser une canne pour détecter des bandes podotactiles ou des surfaces rugueuses signalant des changements de direction.</li>
+                <li>Suivre une série d’instructions verbales pour éviter les obstacles ou récupérer un objet clé à un emplacement précis.</li>
+            </ul>
+            <p><strong>Durée estimée :</strong> 20 minutes.</p>
             <button class="btn-interactif" id="parcours-simulation">Simuler le Parcours</button>
         </section>
 
-        <section class="outils">
+        <section class="outils" data-aos="fade-up">
             <h2>Outils Utilisés</h2>
             <ul>
-                <li>Bandeaux</li>
-                <li>Canne blanche</li>
-                <li>Bandes podotactiles</li>
+                <li>Bandeaux occultants : Simulant divers degrés de déficience visuelle.</li>
+                <li>Canne blanche : Fournissant une expérience tactile proche de la réalité.</li>
+                <li>Bandes podotactiles : Pour simuler les repères dans les parcours sensoriels.</li>
+                <li>Objets divers : Matériaux variés (tissu, bois, métal, plastique) pour la manipulation dans l’atelier de textures.</li>
+                <li>Indices sonores : Enregistrements ou dispositifs générant des sons spécifiques pour guider les participants.</li>
             </ul>
+        </section>
+
+        <section class="simulation" data-aos="fade-up">
+            <h2>Simulation Interactive</h2>
+            <div class="simulation-controls">
+                <label for="blur-range">Niveau de Flou :</label>
+                <input type="range" id="blur-range" name="blur-range" min="0" max="10" step="1">
+            </div>
+            <div class="simulation-content" id="simulation-content">
+                <p>Contenu de la simulation...</p>
+                <!-- Ajoutez des éléments interactifs ici -->
+            </div>
         </section>
     </main>
 
