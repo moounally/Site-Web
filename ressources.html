@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démos et Ressources - T'as Pas Vu Venir</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="presentation.html">Présentation</a></li>
+                <li><a href="ateliers.html">Ateliers</a></li>
+                <li><a href="témoignages.html">Témoignages</a></li>
+                <li><a href="ressources.html">Ressources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Démos et Ressources</h1>
+
+        <section class="demo">
+            <h2>Démonstration du Jeu</h2>
+            <video controls>
+                <source src="assets/vidéos/demo-jeu.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture des vidéos.
+            </video>
+        </section>
+
+        <section class="quiz">
+            <h2>Quiz : Testez vos connaissances</h2>
+            <form id="quiz-form" aria-label="Quiz sur le handicap visuel">
+                <p>1. Combien de personnes sont concernées par le handicap visuel dans le monde ?</p>
+                <input type="radio" id="q1a1" name="q1" value="a1" required>
+                <label for="q1a1">250 millions</label><br>
+                <input type="radio" id="q1a2" name="q1" value="a2">
+                <label for="q1a2">500 millions</label><br>
+                <input type="radio" id="q1a3" name="q1" value="a3">
+                <label for="q1a3">1 milliard</label><br><br>
+
+                <!-- Ajoutez d'autres questions selon besoin -->
+
+                <button type="submit" class="btn">Soumettre</button>
+            </form>
+            <div id="quiz-result"></div>
+        </section>
+
+        <section class="resources">
+            <h2>Ressources Supplémentaires</h2>
+            <ul>
+                <li><a href="https://www.article1.com" target="_blank">Article 1</a></li>
+                <li><a href="https://www.video1.com" target="_blank">Vidéo 1</a></li>
+                <li><a href="docs/guide-jeu.pdf" download>Télécharger le Guide du Jeu (PDF)</a></li>
+                <!-- Ajoutez d'autres ressources si nécessaire -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
+    </footer>
+</body>
+</html>

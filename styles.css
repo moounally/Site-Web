@@ -5,11 +5,20 @@
     box-sizing: border-box;
 }
 
+/* Variables de Couleurs */
+:root {
+    --couleur-principale: #2c3e50;
+    --couleur-secondaire: #18bc9c;
+    --couleur-accent: #e74c3c;
+    --texte-clair: #ecf0f1;
+    --texte-foncé: #2c3e50;
+}
+
 /* Corps */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #67fac9, #3e63f7a8);
-    color: #333;
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    color: var(--texte-clair);
     text-align: center;
     min-height: 100vh;
     display: flex;
@@ -17,65 +26,239 @@ body {
     justify-content: space-between;
 }
 
+/* Header */
 header {
-    background-color: #004080;
-    padding: 15px 0;
-    color: white;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
 }
 
-header nav ul {
+header .logo {
+    width: 80px;
+}
+
+nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-header nav a {
+nav a {
+    color: var(--texte-clair);
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-header nav a:hover {
-    color: #ff6f61;
+nav a:hover {
+    color: var(--couleur-accent);
 }
 
-/* Contenu principal */
+/* Contenu Principal */
 main {
     flex: 1;
-    padding: 20px;
+    padding: 100px 20px 20px; /* Ajustement pour le header fixe */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-h1, h2 {
-    color: #004080;
+.hero {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--couleur-accent);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--texte-clair);
+    background-color: var(--couleur-accent);
+    border-radius: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+    background-color: darken(var(--couleur-accent), 10%);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Sections Ateliers */
+.atelier {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    transition: transform 0.3s;
+}
+
+.atelier:hover {
+    transform: scale(1.02);
+}
+
+.atelier img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.btn-interactif {
+    margin-top: 10px;
+}
+
+/* Formulaires */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--texte-clair);
+}
+
+form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Témoignages */
+.témoignage {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.témoignage img, .témoignage video, .témoignage audio {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Associations */
+.associations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.association {
+    margin: 10px 0;
+}
+
+.association img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.association img:hover {
+    transform: scale(1.1);
+}
+
+/* Quiz */
+.quiz form {
+    text-align: left;
+}
+
+.quiz button {
+    width: 100%;
+}
+
+/* Simulation */
+.simulation-controls {
     margin-bottom: 20px;
 }
 
-button, .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    color: white;
-    background-color: #ff6f61;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-button:hover, .btn:hover {
-    background-color: #ff3b2f;
-    transform: scale(1.1);
+.simulation-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    color: var(--texte-clair);
 }
 
 /* Footer */
 footer {
-    background-color: #004080;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--texte-clair);
     padding: 10px 0;
     text-align: center;
     font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .atelier, .témoignage, .resources, .quiz, .simulation {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
 }

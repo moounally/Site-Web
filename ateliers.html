@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Ateliers - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
+        <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
                 <li><a href="ateliers.html">Ateliers</a></li>
+                <li><a href="témoignages.html">Témoignages</a></li>
+                <li><a href="ressources.html">Ressources</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -22,11 +25,32 @@
     <main>
         <h1>Les Ateliers</h1>
 
-        <section>
+        <section class="atelier">
             <h2>Atelier 1 : La Chambre des Textures</h2>
             <p>Objectif : Identifier et manipuler des objets grâce à leurs textures dans une pièce les yeux bandés.</p>
+            <img src="images/chambre-textures.jpg" alt="Chambre des Textures">
+            <button class="btn-interactif" id="texture-simulation">Simuler la Chambre</button>
         </section>
 
-        <section>
+        <section class="atelier">
             <h2>Atelier 2 : Le Parcours Sensoriel</h2>
-            <p>Objectif : Parcourir
+            <p>Objectif : Parcourir un chemin semé d'obstacles en utilisant uniquement des indices sonores ou tactiles.</p>
+            <img src="images/parcours-sensoriel.jpg" alt="Parcours Sensoriel">
+            <button class="btn-interactif" id="parcours-simulation">Simuler le Parcours</button>
+        </section>
+
+        <section class="outils">
+            <h2>Outils Utilisés</h2>
+            <ul>
+                <li>Bandeaux</li>
+                <li>Canne blanche</li>
+                <li>Bandes podotactiles</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
+    </footer>
+</body>
+</html>

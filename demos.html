@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T'as Pas Vu Venir - Accueil</title>
+    <title>Démos - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Header avec Logo et Navigation -->
     <header>
         <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
         <nav>
@@ -24,16 +23,21 @@
         </nav>
     </header>
 
-    <!-- Contenu Principal -->
     <main>
-        <section class="hero">
-            <h1>Fermez les yeux, ouvrez votre esprit.</h1>
-            <p>Un jeu immersif pour explorer, comprendre et relever les défis invisibles rencontrés au quotidien.</p>
-            <a href="demos.html" class="btn">Plongez dans l'expérience</a>
+        <h1>Plongez dans l'Expérience</h1>
+        <section class="simulation">
+            <h2>Simulation de Déficience Visuelle</h2>
+            <div class="simulation-controls">
+                <label for="blur-range">Niveau de Flou :</label>
+                <input type="range" id="blur-range" name="blur-range" min="0" max="10" step="1">
+            </div>
+            <div class="simulation-content" id="simulation-content">
+                <p>Contenu de la simulation...</p>
+                <!-- Ajoutez des éléments interactifs ici -->
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
     </footer>
