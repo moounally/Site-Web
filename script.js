@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Vous pouvez ajouter une logique pour envoyer les données via AJAX
+            // Logique pour envoyer les données via AJAX ou autre méthode
             alert('Merci pour votre message !');
             contactForm.reset();
         });
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (temoignageForm) {
         temoignageForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Logic pour ajouter le témoignage en temps réel (simulé ici)
+            // Logique pour ajouter le témoignage en temps réel (simulé ici)
             const prenom = document.getElementById('prenom').value;
             const message = document.getElementById('message').value;
             const evaluation = document.getElementById('evaluation').value;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quizForm) {
         quizForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Simple logique de quiz
+            // Logique de quiz
             const q1 = quizForm.q1.value;
             let score = 0;
             if (q1 === 'a2') score += 1; // Supposons que 'a2' est la bonne réponse
@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     gsap.from(body, { duration: 2, filter: 'blur(10px)', opacity: 0, ease: 'power2.out' });
 
-    // Quiz Images
-    const images = document.querySelectorAll('.blurred');
+    // Quiz Images - Déflou au Clic
+    const images = document.querySelectorAll('.blur');
     images.forEach(img => {
         img.addEventListener('click', () => {
-            img.classList.toggle('blurred');
+            img.classList.toggle('blur');
         });
     });
 });

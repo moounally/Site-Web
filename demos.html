@@ -44,10 +44,10 @@
                 <!-- Ajoutez des éléments interactifs ici, comme des images floues à identifier -->
                 <div class="quiz-simulation">
                     <h3>Quiz de Reconnaissance</h3>
-                    <img src="images/calculatrice.jpeg" alt="Calculatrice" class="blurred" id="image1">
-                    <img src="images/bouteille_eau.jpeg" alt="Bouteille d'eau" class="blurred" id="image2">
-                    <img src="images/clef.jpeg" alt="Clé" class="blurred" id="image3">
-                    <img src="images/trousse.jpeg" alt="Trousse" class="blurred" id="image4">
+                    <img src="images/calculatrice.jpeg" alt="Calculatrice" class="blur">
+                    <img src="images/bouteille_eau.jpeg" alt="Bouteille d'eau" class="blur">
+                    <img src="images/clef.jpeg" alt="Clé" class="blur">
+                    <img src="images/trousse.jpeg" alt="Trousse" class="blur">
                     <form id="quiz-simulation-form">
                         <label for="image1-answer">Que voyez-vous sur l'image 1 ?</label><br>
                         <select id="image1-answer" name="image1-answer" required>
@@ -59,7 +59,35 @@
                             <option value="autre">Autre</option>
                         </select><br><br>
 
-                        <!-- Répétez pour les autres images -->
+                        <label for="image2-answer">Que voyez-vous sur l'image 2 ?</label><br>
+                        <select id="image2-answer" name="image2-answer" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="calculatrice">Calculatrice</option>
+                            <option value="bouteille_eau">Bouteille d'eau</option>
+                            <option value="clef">Clé</option>
+                            <option value="trousse">Trousse</option>
+                            <option value="autre">Autre</option>
+                        </select><br><br>
+
+                        <label for="image3-answer">Que voyez-vous sur l'image 3 ?</label><br>
+                        <select id="image3-answer" name="image3-answer" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="calculatrice">Calculatrice</option>
+                            <option value="bouteille_eau">Bouteille d'eau</option>
+                            <option value="clef">Clé</option>
+                            <option value="trousse">Trousse</option>
+                            <option value="autre">Autre</option>
+                        </select><br><br>
+
+                        <label for="image4-answer">Que voyez-vous sur l'image 4 ?</label><br>
+                        <select id="image4-answer" name="image4-answer" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="calculatrice">Calculatrice</option>
+                            <option value="bouteille_eau">Bouteille d'eau</option>
+                            <option value="clef">Clé</option>
+                            <option value="trousse">Trousse</option>
+                            <option value="autre">Autre</option>
+                        </select><br><br>
 
                         <button type="submit" class="btn">Valider les Réponses</button>
                     </form>
