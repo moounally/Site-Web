@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            menuToggle.classList.toggle('active'); // Optionnel: pour animer le bouton
+        });
+    }
+
     // Gestion du formulaire de contact
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
@@ -22,19 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>Merci pour votre message ! Nous reviendrons vers vous très bientôt.</p>
                         `;
                         formMessage.classList.add('success');
+                        formMessage.classList.remove('error');
+                        formMessage.style.display = 'block';
                         contactForm.reset(); // Réinitialise le formulaire
                     } else {
-                        formMessage.innerHTML = `
-                            <p>Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.</p>
-                        `;
-                        formMessage.classList.add('error');
+                        throw new Error('Erreur serveur');
                     }
                 })
                 .catch(() => {
                     formMessage.innerHTML = `
-                        <p>Oups ! Une erreur s'est produite. Veuillez vérifier votre connexion et réessayer.</p>
+                        <p>Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.</p>
                     `;
                     formMessage.classList.add('error');
+                    formMessage.classList.remove('success');
+                    formMessage.style.display = 'block';
                 });
         });
     }
@@ -60,11 +72,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert("Merci pour votre témoignage ! Nous l'avons bien reçu.");
                         temoignageForm.reset(); // Réinitialise le formulaire
                     } else {
-                        alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
+                        throw new Error('Erreur serveur');
                     }
                 })
                 .catch(() => {
-                    alert("Erreur de connexion. Vérifiez votre réseau et réessayez.");
+                    alert("Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.");
                 });
         });
     }
@@ -89,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Vérification des réponses utilisateur
             Object.keys(correctAnswers).forEach((questionId) => {
-                const userAnswer = quizSimulationForm[questionId]?.value;
+                const userAnswer = quizSimulationForm[questionId]?.value.trim().toLowerCase();
                 if (userAnswer === correctAnswers[questionId]) {
                     score++;
                 }

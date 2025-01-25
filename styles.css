@@ -28,7 +28,6 @@ body {
     flex-direction: column;
 }
 
-
 /* Messages de confirmation et d'erreur */
 .form-message {
     margin-top: 20px;
@@ -52,24 +51,32 @@ body {
     border: 1px solid #f5c6cb;
 }
 
-
 /* Header */
 header {
     width: 100%;
     background-color: var(--main-blue);
-    padding: 15px 0;
+    padding: 15px 20px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: var(--box-shadow); /* Ombre pour séparer visuellement le header */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
+/* Logo */
 header .logo {
-    width: 100px;
-    margin-bottom: 10px;
+    width: 50px;
+    height: auto;
 }
 
 /* Navigation */
+nav {
+    /* Utilisation de flex pour aligner les éléments */
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -88,17 +95,33 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+/* Bouton Menu pour mobiles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
 /* Contenu principal */
 main {
     flex: 1;
-    padding: 100px 20px 20px; /* Espace pour le header fixe */
+    padding: 100px 20px 20px; /* Compense la hauteur fixe du header */
+    width: 100%;
 }
 
 /* Sections */
 section {
     width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 40px auto; /* Espace entre les sections */
     padding: 20px;
     background: var(--section-bg);
     border-radius: 10px;
@@ -112,15 +135,15 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajustez la hauteur selon vos besoins */
+    min-height: 60vh; /* Ajustez selon vos besoins */
     text-align: center;
-    background: var(--section-bg); /* Vous pouvez changer la couleur de fond si nécessaire */
-    margin: 0 auto; /* Assure que la section est centrée horizontalement */
+    background: var(--section-bg);
+    margin: 0 auto;
 }
 
 /* Logo dans la section Hero */
 .hero-logo {
-    width: 500px; /* Ajustez la taille selon vos besoins */
+    width: 250px; /* Taille ajustée pour les grands écrans */
     height: auto;
     margin: 20px 0;
 }
@@ -167,9 +190,14 @@ ul, ol {
     text-decoration: none;
     font-size: 1em;
     text-align: center; /* Centre le texte dans le bouton */
-    margin: 20px auto; /* Centre le bouton horizontalement */
 }
 
+.btn:hover, button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* Grid Équipe */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -182,26 +210,20 @@ ul, ol {
     width: 150px; /* Taille standard pour toutes les images */
     height: 150px; /* Hauteur standard */
     object-fit: cover; /* Recadre l'image sans la déformer */
-    border-radius: 50%; /* Rendre les images rondes pour un look harmonieux */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'esthétique */
+    border-radius: 50%; /* Images rondes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre esthétique */
     margin-bottom: 10px; /* Espace entre l'image et le texte */
 }
 
 .team-member h3 {
     margin: 10px 0 5px;
     font-size: 1.2em;
-    color: #004080; /* Exemple de couleur pour les noms */
+    color: var(--main-blue);
 }
 
 .team-member p {
     font-size: 0.9em;
     color: #555;
-}
-
-
-.btn:hover, button:hover {
-    background-color: var(--button-hover);
-    transform: scale(1.05);
 }
 
 /* Images Responsives */
@@ -216,7 +238,7 @@ ul, ol {
 footer {
     background-color: var(--main-blue);
     color: var(--text-light);
-    padding: 15px 0;
+    padding: 15px 20px;
     text-align: center;
     font-size: 0.9em;
 }
@@ -272,18 +294,44 @@ form input, form textarea, form select {
     font-weight: bold;
 }
 
-
 form button {
     width: 100%;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* Media Queries */
+@media (max-width: 1200px) {
+    .hero-logo {
+        width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
+        display: none; /* Caché par défaut pour le menu mobile */
     }
 
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-logo {
+        width: 250px;
+    }
+}
+
+@media (max-width: 600px) {
     header .logo {
         width: 80px;
     }
@@ -301,7 +349,7 @@ form button {
     }
 
     .hero {
-        height: auto; /* Permet à la hauteur de s'adapter sur les petits écrans */
+        min-height: auto; /* S'adapte sur les petits écrans */
         padding: 50px 20px;
     }
 
