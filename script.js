@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
+    // Gestion du bouton hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    } else {
+        console.warn('Hamburger ou navigation non trouvé');
+    }
+
     // Gestion du formulaire de contact
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
