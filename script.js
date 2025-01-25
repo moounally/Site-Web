@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
+
+        // Optionnel : Fermer le menu lorsqu'un lien est cliqué (sur mobile)
+        const navLinks = document.querySelectorAll('.nav-links li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
     } else {
         console.warn('Hamburger ou navigation non trouvé');
     }
