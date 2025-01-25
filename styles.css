@@ -28,29 +28,6 @@ body {
     flex-direction: column;
 }
 
-/* Messages de confirmation et d'erreur */
-.form-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 5px;
-    display: none; /* Caché par défaut */
-}
-
-.form-message.success {
-    display: block;
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-}
-
-.form-message.error {
-    display: block;
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-}
-
 /* Header */
 header {
     width: 100%;
@@ -61,9 +38,14 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: var(--box-shadow); /* Ombre pour séparer visuellement le header */
+}
+
+header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Logo */
@@ -73,14 +55,9 @@ header .logo {
 }
 
 /* Navigation */
-nav {
-    /* Utilisation de flex pour aligner les éléments */
-}
-
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
@@ -93,34 +70,6 @@ nav a {
 
 nav a:hover {
     color: var(--accent-color);
-}
-
-/* Bouton Menu pour mobiles - Label */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-light);
-    margin: 4px 0;
-    transition: all 0.3s;
-}
-
-/* Animation du bouton menu lorsque actif */
-#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(2) {
-    opacity: 0;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Contenu principal */
@@ -256,7 +205,10 @@ footer {
     font-size: 0.9em;
 }
 
-/* Réseaux Sociaux */
+footer .reseaux-sociaux {
+    margin-top: 10px;
+}
+
 .reseaux-sociaux a {
     margin: 0 10px;
     display: inline-block;
@@ -319,33 +271,30 @@ form button {
 }
 
 @media (max-width: 768px) {
-    header {
+    header .container {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    /* Styles pour le menu mobile contrôlé par le checkbox */
     nav ul {
         flex-direction: column;
         gap: 10px;
         width: 100%;
-        display: none; /* Caché par défaut pour le menu mobile */
-        position: absolute;
-        top: 60px; /* Ajustez selon la hauteur du header */
-        left: 0;
-        background-color: var(--main-blue);
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
         padding: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 999; /* Assure que le menu est au-dessus des autres éléments */
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Lorsque le checkbox est coché, afficher le menu */
-    #menu-toggle-checkbox:checked ~ nav ul {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: flex;
+    nav ul li:first-child a {
+        border-top: none;
     }
 
     .hero-logo {
@@ -377,5 +326,9 @@ form button {
 
     .hero-logo {
         width: 150px; /* Taille réduite pour les petits écrans */
+    }
+
+    nav ul {
+        padding: 10px 0;
     }
 }
