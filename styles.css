@@ -95,7 +95,7 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* Bouton Menu pour mobiles */
+/* Bouton Menu pour mobiles - Label */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -111,15 +111,15 @@ nav a:hover {
 }
 
 /* Animation du bouton menu lorsque actif */
-.menu-toggle.active span:nth-child(1) {
+#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-.menu-toggle.active span:nth-child(2) {
+#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(2) {
     opacity: 0;
 }
 
-.menu-toggle.active span:nth-child(3) {
+#menu-toggle-checkbox:checked + .menu-toggle span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
@@ -324,6 +324,7 @@ form button {
         align-items: flex-start;
     }
 
+    /* Styles pour le menu mobile contrôlé par le checkbox */
     nav ul {
         flex-direction: column;
         gap: 10px;
@@ -338,7 +339,8 @@ form button {
         z-index: 999; /* Assure que le menu est au-dessus des autres éléments */
     }
 
-    nav ul.active {
+    /* Lorsque le checkbox est coché, afficher le menu */
+    #menu-toggle-checkbox:checked ~ nav ul {
         display: flex;
     }
 

@@ -1,21 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-    // Gestion du menu mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
-
-    if (menuToggle && navUl) {
-        console.log('menu-toggle et nav ul trouvés');
-        menuToggle.addEventListener('click', () => {
-            console.log('Menu toggle clicked');
-            navUl.classList.toggle('active');
-            menuToggle.classList.toggle('active'); // Pour animer le bouton
-        });
-    } else {
-        console.warn('menu-toggle ou nav ul non trouvé');
-    }
-
     // Gestion du formulaire de contact
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
