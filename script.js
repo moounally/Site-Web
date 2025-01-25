@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
+
     // Gestion du menu mobile
     const menuToggle = document.querySelector('.menu-toggle');
     const navUl = document.querySelector('nav ul');
 
-    if (menuToggle) {
+    if (menuToggle && navUl) {
+        console.log('menu-toggle et nav ul trouvés');
         menuToggle.addEventListener('click', () => {
+            console.log('Menu toggle clicked');
             navUl.classList.toggle('active');
-            menuToggle.classList.toggle('active'); // Optionnel: pour animer le bouton
+            menuToggle.classList.toggle('active'); // Pour animer le bouton
         });
+    } else {
+        console.warn('menu-toggle ou nav ul non trouvé');
     }
 
     // Gestion du formulaire de contact
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
-    if (contactForm) {
+    if (contactForm && formMessage) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
@@ -36,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         formMessage.classList.remove('error');
                         formMessage.style.display = 'block';
                         contactForm.reset(); // Réinitialise le formulaire
+                        console.log('Formulaire de contact envoyé avec succès');
                     } else {
                         throw new Error('Erreur serveur');
                     }
@@ -47,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formMessage.classList.add('error');
                     formMessage.classList.remove('success');
                     formMessage.style.display = 'block';
+                    console.error('Erreur lors de l\'envoi du formulaire de contact');
                 });
         });
     }
@@ -71,12 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (response.ok) {
                         alert("Merci pour votre témoignage ! Nous l'avons bien reçu.");
                         temoignageForm.reset(); // Réinitialise le formulaire
+                        console.log('Formulaire de témoignage envoyé avec succès');
                     } else {
                         throw new Error('Erreur serveur');
                     }
                 })
                 .catch(() => {
                     alert("Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.");
+                    console.error('Erreur lors de l\'envoi du formulaire de témoignage');
                 });
         });
     }
@@ -85,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const quizSimulationForm = document.getElementById('quiz-simulation-form');
     const quizSimulationResult = document.getElementById('quiz-simulation-result');
 
-    if (quizSimulationForm) {
+    if (quizSimulationForm && quizSimulationResult) {
         quizSimulationForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -115,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     : '<p>Essayez encore pour améliorer votre score.</p>'}
             `;
             quizSimulationResult.style.display = 'block';
+            console.log(`Quiz terminé avec un score de ${score}/4`);
         });
     }
 });
