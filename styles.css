@@ -78,6 +78,7 @@ nav a:hover {
     font-size: 1.5em;
     color: var(--text-light);
     cursor: pointer;
+    z-index: 1001; /* Assure que le hamburger est au-dessus du menu */
 }
 
 /* Contenu principal */
@@ -319,6 +320,11 @@ form button {
     .hero-logo {
         width: 250px;
     }
+
+    /* Amélioration du curseur */
+    .hamburger:hover {
+        color: var(--accent-color);
+    }
 }
 
 @media (max-width: 600px) {
@@ -350,4 +356,10 @@ form button {
     nav ul {
         padding: 10px 0;
     }
+}
+
+/* Animation du bouton hamburger lorsqu'il est actif */
+.hamburger.active .fa-bars {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
 }

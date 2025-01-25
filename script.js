@@ -6,9 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('nav');
 
     if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
+        // Fonction pour toggler le menu
+        const toggleMenu = () => {
             nav.classList.toggle('active');
             hamburger.classList.toggle('active');
+
+            // Mettre à jour l'attribut aria-expanded
+            const isExpanded = nav.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+        };
+
+        // Click event
+        hamburger.addEventListener('click', toggleMenu);
+
+        // Keyboard accessibility (Enter and Space)
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
         });
 
         // Optionnel : Fermer le menu lorsqu'un lien est cliqué (sur mobile)
@@ -18,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (nav.classList.contains('active')) {
                     nav.classList.remove('active');
                     hamburger.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
                 }
             });
         });
