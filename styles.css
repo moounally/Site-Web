@@ -329,6 +329,13 @@ form button {
         gap: 10px;
         width: 100%;
         display: none; /* Caché par défaut pour le menu mobile */
+        position: absolute;
+        top: 60px; /* Ajustez selon la hauteur du header */
+        left: 0;
+        background-color: var(--main-blue);
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 999; /* Assure que le menu est au-dessus des autres éléments */
     }
 
     nav ul.active {
