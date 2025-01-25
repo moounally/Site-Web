@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && nav) {
         // Fonction pour toggler le menu
         const toggleMenu = () => {
+            console.log('Toggle menu called'); // Debug log
             nav.classList.toggle('active');
             hamburger.classList.toggle('active');
 
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     nav.classList.remove('active');
                     hamburger.classList.remove('active');
                     hamburger.setAttribute('aria-expanded', 'false');
+                    console.log('Menu fermé après clic sur un lien');
                 }
             });
         });

@@ -81,6 +81,10 @@ nav a:hover {
     z-index: 1001; /* Assure que le hamburger est au-dessus du menu */
 }
 
+.hamburger:focus {
+    outline: 2px solid var(--accent-color);
+}
+
 /* Contenu principal */
 main {
     flex: 1;
@@ -281,7 +285,7 @@ form button {
 
     /* Cacher le menu de navigation par défaut */
     nav {
-        position: absolute;
+        position: fixed; /* Position fixe pour que le menu reste visible */
         top: 60px; /* Ajustez selon la hauteur du header */
         left: 0;
         width: 100%;
@@ -289,6 +293,9 @@ form button {
         display: none;
         flex-direction: column;
         align-items: center;
+        z-index: 1002; /* Assure que le menu est au-dessus du hamburger */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre pour séparer visuellement le menu */
+        transition: all 0.3s ease; /* Transition pour l'affichage du menu */
     }
 
     nav ul {
@@ -305,6 +312,7 @@ form button {
         width: 100%;
         padding: 15px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
     }
 
     nav ul li:first-child a {
