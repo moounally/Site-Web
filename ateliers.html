@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ateliers - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -28,122 +24,60 @@
     </header>
 
     <main>
-        <section class="ateliers-header" data-aos="fade-in">
-            <h1>Les Ateliers</h1>
-            <p>Découvrez les différentes activités immersives conçues pour vous sensibiliser aux défis rencontrés par les personnes malvoyantes ou non-voyantes.</p>
+        <section class="ateliers-header">
+            <h1>Les Ateliers Immersifs</h1>
+            <p>Plongez dans l’univers unique de "T’as Pas Vu Venir !", où chaque défi vous rapproche un peu plus de la réalité des personnes malvoyantes et non-voyantes. Préparez-vous à utiliser vos sens comme jamais auparavant !</p>
         </section>
 
-        <section class="atelier" data-aos="fade-up">
-            <h2>Atelier 1 : La Chambre des Textures</h2>
-            <p><strong>Objectif :</strong> Identifier et manipuler des objets cachés grâce à leur texture.</p>
-            <img src="images/chambre-textures.jpg" alt="Chambre des Textures" class="responsive-img">
+        <section class="passe1">
+            <h2>Passe 1 : Immersion Totale - À l'Aveugle</h2>
+            <p>Dans ce scénario, la vue, c’est so 2024 ! Munissez-vous d’une canne blanche et relevez des défis dignes d’un parcours du combattant :</p>
             <ul>
-                <li>Explorer tactiquement les surfaces pour retrouver des objets spécifiques.</li>
-                <li>Utiliser les textures des objets (bois, métal, tissu) pour différencier et sélectionner les éléments pertinents.</li>
+                <li><strong>Manipulation d’objets :</strong> Trouvez un objet précis et placez-le dans un panier situé... quelque part dans la pièce.</li>
+                <li><strong>Épreuve d’équilibre :</strong> Traversez un chemin semé d’embûches – sacs abandonnés, chaises mal rangées, voire un adversaire invisible (attention à vos orteils).</li>
+                <li><strong>Mission tactile :</strong> Identifiez des objets mystères au toucher. Est-ce une trousse ? Une calculatrice ? Une patate ? Qui sait !</li>
             </ul>
-            <h3>Exemples d’énigmes :</h3>
-            <ul>
-                <li>Repérer une clé cachée parmi d’autres objets uniquement au toucher.</li>
-                <li>Identifier un objet générant un son ou une vibration spécifique.</li>
-            </ul>
-            <p><strong>Durée estimée :</strong> 20 minutes.</p>
-            <button class="btn-interactif" id="texture-simulation">Simuler la Chambre</button>
+            <p>Un animateur sera là pour vous guider (et rigoler un peu, mais c’est de bonne guerre).
+            </p>
         </section>
 
-        <section class="atelier" data-aos="fade-up">
-            <h2>Atelier 2 : Le Parcours Sensoriel avec Obstacles</h2>
-            <p><strong>Objectif :</strong> Parcourir un chemin semé d’obstacles en utilisant une canne et des indices sonores ou tactiles pour se repérer.</p>
-            <img src="images/parcours-sensoriel.jpg" alt="Parcours Sensoriel" class="responsive-img">
-            <ul>
-                <li>Identifier les obstacles en se basant sur les indices tactiles ou sonores.</li>
-                <li>Naviguer efficacement en écoutant les consignes d’un coéquipier ou en utilisant un dispositif simulant une aide sonore.</li>
-            </ul>
-            <h3>Exemples d’énigmes :</h3>
-            <ul>
-                <li>Utiliser une canne pour détecter des bandes podotactiles ou des surfaces rugueuses signalant des changements de direction.</li>
-                <li>Suivre une série d’instructions verbales pour éviter les obstacles ou récupérer un objet clé à un emplacement précis.</li>
-            </ul>
-            <p><strong>Durée estimée :</strong> 20 minutes.</p>
-            <button class="btn-interactif" id="parcours-simulation">Simuler le Parcours</button>
+        <section class="transition">
+            <h2>Transition : Changement de Perspective</h2>
+            <p>Bravo, vous avez survécu à la première passe ! Maintenant, cap sur la malvoyance. Vous garderez votre position face à un mur (non, il ne bougera pas) pendant que vous enfilez des lunettes floutées. L’expérience continue !</p>
         </section>
 
-        <section class="outils" data-aos="fade-up">
-            <h2>Outils Utilisés</h2>
+        <section class="passe2">
+            <h2>Passe 2 : Lunettes Floutées et Défis Visuels</h2>
+            <p>Bienvenue dans un monde flou et fascinant. Dans cette passe, votre vue est limitée, mais pas votre ingéniosité :</p>
             <ul>
-                <li>Bandeaux occultants : Simulant divers degrés de déficience visuelle.</li>
-                <li>Canne blanche : Fournissant une expérience tactile proche de la réalité.</li>
-                <li>Bandes podotactiles : Pour simuler les repères dans les parcours sensoriels.</li>
-                <li>Objets divers : Matériaux variés (tissu, bois, métal, plastique) pour la manipulation dans l’atelier de textures.</li>
-                <li>Indices sonores : Enregistrements ou dispositifs générant des sons spécifiques pour guider les participants.</li>
+                <li><strong>Association d’objets :</strong> Trouvez le bon objet correspondant à des images. Pas facile quand tout ressemble à un nuage, hein ?</li>
+                <li><strong>Recherche stratégique :</strong> La panière que vous cherchez ? Elle a été déplacée. Bonne chance !</li>
+                <li><strong>Course finale :</strong> Trouvez la sortie et terminez en beauté. Attention aux murs et aux coins de table, ils sont traîtres.</li>
             </ul>
+            <p>C’est le moment de montrer vos talents de détective visuel (ou de demander de l’aide, on ne juge pas).</p>
         </section>
 
-        <section class="simulation" data-aos="fade-up">
-            <h2>Simulation Interactive</h2>
-            <div class="simulation-controls">
-                <label for="blur-range">Niveau de Flou :</label>
-                <input type="range" id="blur-range" name="blur-range" min="0" max="10" step="1">
-            </div>
-            <div class="simulation-content" id="simulation-content">
-                <p>Contenu de la simulation...</p>
-                <!-- Ajoutez des éléments interactifs ici, comme des images floues à identifier -->
-                <div class="quiz-simulation">
-                    <h3>Quiz de Reconnaissance</h3>
-                    <img src="images/calculatrice.jpeg" alt="Calculatrice" class="blur">
-                    <img src="images/bouteille_eau.jpeg" alt="Bouteille d'eau" class="blur">
-                    <img src="images/clef.jpeg" alt="Clé" class="blur">
-                    <img src="images/trousse.jpeg" alt="Trousse" class="blur">
-                    <form id="quiz-simulation-form">
-                        <label for="image1-answer">Que voyez-vous sur l'image 1 ?</label><br>
-                        <select id="image1-answer" name="image1-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
+        <section class="simulation">
+            <h2>Simulation Finale</h2>
+            <p>Vous avez affronté les deux défis. Maintenant, combinez vos expériences pour une simulation ultime. Devinez des objets, associez-les à des noms et explorez vos limites sensorielles dans une aventure unique !</p>
+            <a href="demos.html" class="btn">Essayez la Simulation</a>
+        </section>
 
-                        <label for="image2-answer">Que voyez-vous sur l'image 2 ?</label><br>
-                        <select id="image2-answer" name="image2-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
 
-                        <label for="image3-answer">Que voyez-vous sur l'image 3 ?</label><br>
-                        <select id="image3-answer" name="image3-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <label for="image4-answer">Que voyez-vous sur l'image 4 ?</label><br>
-                        <select id="image4-answer" name="image4-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <button type="submit" class="btn">Valider les Réponses</button>
-                    </form>
-                    <div id="quiz-simulation-result"></div>
-                </div>
-            </div>
+        <section class="pourquoi-jouer">
+            <h2>Pourquoi Jouer à "T’as Pas Vu Venir !" ?</h2>
+            <ul>
+                <li><strong>Sensibilisation :</strong> Découvrez les défis du quotidien des personnes malvoyantes et non-voyantes.</li>
+                <li><strong>Adaptation :</strong> Apprenez à faire confiance à vos autres sens et à repousser vos limites.</li>
+                <li><strong>Éducation :</strong> Une plateforme ludique et pédagogique pour promouvoir l’inclusion.</li>
+                <li><strong>Moments de partage :</strong> Collaborez, échangez et repartez transformé.</li>
+            </ul>
+            <p>Ce n’est pas juste un jeu, c’est une véritable aventure humaine. Prêts à relever le défi ?</p>
         </section>
     </main>
 
     <footer>
-        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
+        <p>&copy; 2025 - T'as Pas Vu Venir. Tous droits réservés.
     </footer>
 </body>
 </html>

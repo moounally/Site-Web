@@ -7,35 +7,31 @@
 
 /* Variables de couleurs */
 :root {
-    --main-blue: #003f5c;
-    --light-blue: #7a5195;
-    --gold: #ffa600;
-    --gray-bg: #f5f5f5;
+    --main-blue: #004080;
     --accent-color: #ff6f61;
+    --button-hover: #ff3b2f;
     --text-light: #ffffff;
     --text-dark: #333333;
-    --background-gradient: linear-gradient(to bottom, #67fac9, #3e63f7a8);
-    --header-bg: #004080;
-    --footer-bg: #004080;
-    --button-hover: #ff3b2f;
+    --background: #f5f5f5;
+    --section-bg: #ffffff;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Corps de la page */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--background-gradient);
+    font-family: 'Arial', sans-serif;
+    background: var(--background);
     color: var(--text-dark);
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 /* Header */
 header {
     width: 100%;
-    background-color: var(--header-bg);
+    background-color: var(--main-blue);
     padding: 15px 0;
     position: fixed;
     top: 0;
@@ -44,21 +40,22 @@ header {
 }
 
 header .logo {
-    width: 80px;
+    width: 100px;
     margin-bottom: 10px;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: var(--text-light);
-    font-weight: 600;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
@@ -69,56 +66,115 @@ nav a:hover {
 /* Contenu principal */
 main {
     flex: 1;
-    padding: 100px 20px 20px; /* Ajustement pour le header fixe */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 100px 20px 20px; /* Espace pour le header fixe */
 }
 
 /* Sections */
 section {
     width: 100%;
-    max-width: 1200px;
-    margin-bottom: 60px;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-section h1, section h2, section h3 {
-    color: var(--main-blue);
-    margin-bottom: 20px;
-}
-
-section p, section ul, section ol {
-    color: var(--text-dark);
-    line-height: 1.6;
-    margin-bottom: 15px;
+    background: var(--section-bg);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
     text-align: left;
 }
 
-section ul, section ol {
+/* Section Hero - Centrage du contenu */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajustez la hauteur selon vos besoins */
+    text-align: center;
+    background: var(--section-bg); /* Vous pouvez changer la couleur de fond si nécessaire */
+    margin: 0 auto; /* Assure que la section est centrée horizontalement */
+}
+
+/* Logo dans la section Hero */
+.hero-logo {
+    width: 500px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Titres */
+h1, h2, h3 {
+    color: var(--main-blue);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Paragraphes et listes */
+p, ul, ol {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+ul, ol {
     padding-left: 20px;
 }
 
 /* Boutons */
-.btn, button, .btn-interactif {
-    display: inline-block;
-    padding: 12px 25px;
+.btn, button {
+    display: block; /* Rend le bouton un bloc */
+    margin: 20px auto; /* Centre horizontalement le bouton */
+    padding: 10px 20px;
     color: var(--text-light);
     background-color: var(--accent-color);
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
-    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
     text-decoration: none;
-    margin-top: 10px;
+    font-size: 1em;
+    text-align: center; /* Centre le texte dans le bouton */
+    margin: 20px auto; /* Centre le bouton horizontalement */
 }
 
-.btn:hover, button:hover, .btn-interactif:hover {
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    width: 150px; /* Taille standard pour toutes les images */
+    height: 150px; /* Hauteur standard */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    border-radius: 50%; /* Rendre les images rondes pour un look harmonieux */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour l'esthétique */
+    margin-bottom: 10px; /* Espace entre l'image et le texte */
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #004080; /* Exemple de couleur pour les noms */
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+.btn:hover, button:hover {
     background-color: var(--button-hover);
     transform: scale(1.05);
 }
@@ -126,73 +182,29 @@ section ul, section ol {
 /* Images Responsives */
 .responsive-img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     border-radius: 10px;
-    margin-top: 20px;
-    transition: transform 0.3s;
+    margin-top: 10px;
 }
 
-.responsive-img:hover {
-    transform: scale(1.02);
+/* Footer */
+footer {
+    background-color: var(--main-blue);
+    color: var(--text-light);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
 }
 
-/* Galerie */
-.galerie .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Réseaux Sociaux */
+.reseaux-sociaux a {
+    margin: 0 10px;
+    display: inline-block;
 }
 
-.galerie-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: filter 0.3s, transform 0.3s;
-}
-
-.galerie-item img.blur {
-    filter: blur(8px);
-}
-
-.galerie-item img.blur:hover {
-    filter: blur(0);
-    transform: scale(1.05);
-}
-
-/* Grille de l'équipe */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-}
-
-.team-member {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    border-radius: 15px;
-    transition: transform 0.3s;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-}
-
-.team-member img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.team-member h3 {
-    color: var(--main-blue);
-    margin-bottom: 10px;
-}
-
-.team-member p {
-    color: var(--text-dark);
+.reseaux-sociaux img.social-icon {
+    width: 30px;
+    height: 30px;
 }
 
 /* Formulaires */
@@ -203,44 +215,61 @@ form {
 form label {
     display: block;
     margin-bottom: 5px;
-    color: var(--text-dark);
-    font-weight: 600;
+    font-weight: bold;
 }
 
 form input, form textarea, form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid var(--main-blue);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--main-blue);
     border-radius: 5px;
-    background: #ffffff;
-    color: var(--text-dark);
-    font-size: 1rem;
 }
 
-form input:focus, form textarea:focus, form select:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 5px var(--accent-color);
-}
-
-/* Footer */
-footer {
-    background-color: var(--footer-bg);
-    color: var(--text-light);
-    padding: 15px 0;
+.quiz-item {
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 0.9rem;
+}
+
+.quiz-item label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form button {
+    width: 100%;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
 
-    .galerie .grid, .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    header .logo {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .hero {
+        height: auto; /* Permet à la hauteur de s'adapter sur les petits écrans */
+        padding: 50px 20px;
+    }
+
+    .hero-logo {
+        width: 150px; /* Taille réduite pour les petits écrans */
     }
 }

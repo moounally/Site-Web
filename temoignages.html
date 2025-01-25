@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Témoignages - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -28,13 +24,13 @@
     </header>
 
     <main>
-        <section class="temoignages-header" data-aos="fade-in">
+        <section class="temoignages-header">
             <h1>Témoignages</h1>
             <p>Découvrez les retours des participants ayant testé notre jeu.</p>
         </section>
 
-        <section class="temoignage" data-aos="fade-up">
-            <h2>Jean Dupont</h2>
+        <section class="temoignage">
+            <h2>Jean-Marie LEPEN</h2>
             <video controls class="responsive-img">
                 <source src="assets/videos/jean-dupont.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la lecture des vidéos.
@@ -42,49 +38,49 @@
             <p>"Participer à ce jeu m'a ouvert les yeux sur les défis quotidiens des personnes malvoyantes."</p>
         </section>
 
-        <section class="temoignage" data-aos="fade-up">
+        <section class="temoignage">
             <h2>Marie Curie</h2>
-            <audio controls class="responsive-img">
-                <source src="assets/audios/marie-curie.mp3" type="audio/mpeg">
-                Votre navigateur ne supporte pas la lecture des audios.
-            </audio>
+            <video controls class="responsive-img">
+                <source src="assets/videos/marie-curie.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture des vidéos.
+            </video>
             <p>"Une expérience enrichissante qui sensibilise de manière ludique."</p>
         </section>
 
-        <section class="partage" data-aos="fade-up">
+        <section class="partage">
             <h2>Partagez votre expérience</h2>
             <form id="temoignage-form" aria-label="Formulaire de témoignage">
-                <label for="prenom">Prénom :</label><br>
-                <input type="text" id="prenom" name="prenom" required aria-required="true"><br><br>
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
 
-                <label for="message">Votre Témoignage :</label><br>
-                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea><br><br>
+                <label for="message">Votre Témoignage :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
-                <label for="evaluation">Évaluation :</label><br>
-                <select id="evaluation" name="evaluation" required aria-required="true">
+                <label for="evaluation">Évaluation :</label>
+                <select id="evaluation" name="evaluation" required>
                     <option value="">Sélectionnez</option>
                     <option value="1">⭐</option>
                     <option value="2">⭐⭐</option>
                     <option value="3">⭐⭐⭐</option>
                     <option value="4">⭐⭐⭐⭐</option>
                     <option value="5">⭐⭐⭐⭐⭐</option>
-                </select><br><br>
+                </select>
 
                 <button type="submit" class="btn">Partager</button>
             </form>
         </section>
 
-        <section class="associations" data-aos="fade-up">
+        <section class="associations">
             <h2>Nos Partenaires</h2>
             <div class="association">
                 <a href="https://www.avh.asso.fr/nous-decouvrir/presentation" target="_blank">
-                    <img src="images/avh_logo.jpg" alt="Association Valentin Haüy">
+                    <img src="images/avh_logo.png" alt="Association Valentin Haüy" class="responsive-img">
                 </a>
                 <p>Association Valentin Haüy - Travaillant pour l'inclusion des personnes aveugles et malvoyantes.</p>
             </div>
             <div class="association">
-                <a href="https://www.unadev.org" target="_blank">
-                    <img src="images/unadev_logo.jpg" alt="UNADEV">
+                <a href="https://www.unadev.com" target="_blank">
+                    <img src="images/unadev_logo.jpg" alt="UNADEV" class="responsive-img">
                 </a>
                 <p>UNADEV - Promouvant l'accessibilité et l'inclusion pour tous.</p>
             </div>
@@ -93,7 +89,7 @@
     </main>
 
     <footer>
-        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
+        &copy; 2025 - T'as Pas Vu Venir. Tous droits réservés.
     </footer>
 </body>
 </html>

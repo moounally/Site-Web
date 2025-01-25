@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Démos - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -28,77 +24,74 @@
     </header>
 
     <main>
-        <section class="demos-header" data-aos="fade-in">
+        <section class="demos-header">
             <h1>Plongez dans l'Expérience</h1>
-            <p>Vivez une simulation immersive pour comprendre les défis des personnes malvoyantes ou non-voyantes.</p>
+            <p>Vivez une simulation immersive pour comprendre les défis des personnes malvoyantes.</p>
         </section>
 
-        <section class="simulation" data-aos="fade-up">
+        <section class="simulation">
             <h2>Simulation de Déficience Visuelle</h2>
-            <div class="simulation-controls">
-                <label for="blur-range">Niveau de Flou :</label>
-                <input type="range" id="blur-range" name="blur-range" min="0" max="10" step="1">
-            </div>
-            <div class="simulation-content" id="simulation-content">
-                <p>Contenu de la simulation...</p>
-                <!-- Ajoutez des éléments interactifs ici, comme des images floues à identifier -->
-                <div class="quiz-simulation">
-                    <h3>Quiz de Reconnaissance</h3>
-                    <img src="images/calculatrice.jpeg" alt="Calculatrice" class="blur">
-                    <img src="images/bouteille_eau.jpeg" alt="Bouteille d'eau" class="blur">
-                    <img src="images/clef.jpeg" alt="Clé" class="blur">
-                    <img src="images/trousse.jpeg" alt="Trousse" class="blur">
-                    <form id="quiz-simulation-form">
-                        <label for="image1-answer">Que voyez-vous sur l'image 1 ?</label><br>
-                        <select id="image1-answer" name="image1-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <label for="image2-answer">Que voyez-vous sur l'image 2 ?</label><br>
-                        <select id="image2-answer" name="image2-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <label for="image3-answer">Que voyez-vous sur l'image 3 ?</label><br>
-                        <select id="image3-answer" name="image3-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <label for="image4-answer">Que voyez-vous sur l'image 4 ?</label><br>
-                        <select id="image4-answer" name="image4-answer" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="calculatrice">Calculatrice</option>
-                            <option value="bouteille_eau">Bouteille d'eau</option>
-                            <option value="clef">Clé</option>
-                            <option value="trousse">Trousse</option>
-                            <option value="autre">Autre</option>
-                        </select><br><br>
-
-                        <button type="submit" class="btn">Valider les Réponses</button>
-                    </form>
-                    <div id="quiz-simulation-result"></div>
+            <form id="quiz-simulation-form">
+                <div class="quiz-item">
+                    <img src="images/calculatrice.jpg" alt="Calculatrice" class="responsive-img">
+                    <label for="image1-answer">Que voyez-vous ?</label>
+                    <select id="image1-answer" name="image1-answer" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="calculatrice">Calculatrice</option>
+                        <option value="bouteille_eau">Bouteille d'eau</option>
+                        <option value="clef">Clé</option>
+                        <option value="trousse">Trousse</option>
+                        <option value="autre">Autre</option>
+                    </select>
                 </div>
-            </div>
+
+                <div class="quiz-item">
+                    <img src="images/bouteille_eau.jpg" alt="Bouteille d'eau" class="responsive-img">
+                    <label for="image2-answer">Que voyez-vous ?</label>
+                    <select id="image2-answer" name="image2-answer" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="calculatrice">Calculatrice</option>
+                        <option value="bouteille_eau">Bouteille d'eau</option>
+                        <option value="clef">Clé</option>
+                        <option value="trousse">Trousse</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="quiz-item">
+                    <img src="images/clef.jpg" alt="Clé" class="responsive-img">
+                    <label for="image3-answer">Que voyez-vous ?</label>
+                    <select id="image3-answer" name="image3-answer" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="calculatrice">Calculatrice</option>
+                        <option value="bouteille_eau">Bouteille d'eau</option>
+                        <option value="clef">Clé</option>
+                        <option value="trousse">Trousse</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="quiz-item">
+                    <img src="images/trousse.jpg" alt="Trousse" class="responsive-img">
+                    <label for="image4-answer">Que voyez-vous ?</label>
+                    <select id="image4-answer" name="image4-answer" required>
+                        <option value="">Sélectionnez</option>
+                        <option value="calculatrice">Calculatrice</option>
+                        <option value="bouteille_eau">Bouteille d'eau</option>
+                        <option value="clef">Clé</option>
+                        <option value="trousse">Trousse</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Valider les Réponses</button>
+            </form>
+            <div id="quiz-simulation-result"></div>
         </section>
     </main>
 
     <footer>
-        &copy; 2024 - T'as Pas Vu Venir. Tous droits réservés.
+        &copy; 2025 - T'as Pas Vu Venir. Tous droits réservés.
     </footer>
 </body>
 </html>
