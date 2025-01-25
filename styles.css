@@ -28,6 +28,31 @@ body {
     flex-direction: column;
 }
 
+
+/* Messages de confirmation et d'erreur */
+.form-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Caché par défaut */
+}
+
+.form-message.success {
+    display: block;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    display: block;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+
 /* Header */
 header {
     width: 100%;
@@ -236,6 +261,17 @@ form input, form textarea, form select {
     margin-top: 10px;
     font-weight: bold;
 }
+
+#quiz-simulation-result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 form button {
     width: 100%;

@@ -28,28 +28,32 @@
             <h1>Témoignages</h1>
             <p>Découvrez les retours des participants ayant testé notre jeu.</p>
         </section>
-
-        <section class="temoignage">
-            <h2>Jean-Marie LEPEN</h2>
-            <video controls class="responsive-img">
-                <source src="assets/videos/jean-dupont.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture des vidéos.
-            </video>
-            <p>"Participer à ce jeu m'a ouvert les yeux sur les défis quotidiens des personnes malvoyantes."</p>
+        
+        <!-- Section statique pour les témoignages existants -->
+        <section id="temoignages-list">
+            <section class="temoignage">
+                <h2>Jean-Marie LEPEN</h2>
+                <video controls class="responsive-img">
+                    <source src="assets/videos/jean-dupont.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture des vidéos.
+                </video>
+                <p>"Participer à ce jeu m'a ouvert les yeux sur les défis quotidiens des personnes malvoyantes."</p>
+            </section>
+        
+            <section class="temoignage">
+                <h2>Marie Curie</h2>
+                <video controls class="responsive-img">
+                    <source src="assets/videos/marie-curie.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture des vidéos.
+                </video>
+                <p>"Une expérience enrichissante qui sensibilise de manière ludique."</p>
+            </section>
         </section>
-
-        <section class="temoignage">
-            <h2>Marie Curie</h2>
-            <video controls class="responsive-img">
-                <source src="assets/videos/marie-curie.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture des vidéos.
-            </video>
-            <p>"Une expérience enrichissante qui sensibilise de manière ludique."</p>
-        </section>
-
+        
+        <!-- Formulaire de témoignage connecté à Formspree -->
         <section class="partage">
             <h2>Partagez votre expérience</h2>
-            <form id="temoignage-form" aria-label="Formulaire de témoignage">
+            <form id="temoignage-form" action="https://formspree.io/f/xgvovdlz" method="POST" aria-label="Formulaire de témoignage">
                 <label for="prenom">Prénom :</label>
                 <input type="text" id="prenom" name="prenom" required>
 
@@ -69,6 +73,7 @@
                 <button type="submit" class="btn">Partager</button>
             </form>
         </section>
+    
 
         <section class="associations">
             <h2>Nos Partenaires</h2>
