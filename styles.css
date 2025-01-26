@@ -54,35 +54,78 @@ header .logo {
     height: auto;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: var(--accent-color);
-}
-
 /* Bouton Hamburger */
 .hamburger {
-    display: none;
+    display: block; /* Toujours visible */
     font-size: 1.5em;
     color: var(--text-light);
+    background: none;
+    border: none;
     cursor: pointer;
-    z-index: 1001; /* Assure que le hamburger est au-dessus du menu */
+    transition: color 0.3s;
 }
 
 .hamburger:focus {
     outline: 2px solid var(--accent-color);
+}
+
+.hamburger:hover {
+    color: var(--accent-color);
+}
+
+/* Menu de Navigation */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Masqué par défaut */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.nav-menu.active {
+    left: 0; /* Affiché quand actif */
+}
+
+.nav-menu .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2em;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-menu .close-menu:hover {
+    color: var(--accent-color);
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu ul li {
+    margin: 20px 0;
+}
+
+.nav-menu ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--accent-color);
 }
 
 /* Contenu principal */
@@ -96,7 +139,7 @@ main {
 section {
     width: 100%;
     max-width: 900px;
-    margin: 40px auto; /* Espace entre les sections */
+    margin: 40px auto;
     padding: 20px;
     background: var(--section-bg);
     border-radius: 10px;
@@ -110,7 +153,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh; /* Ajustez selon vos besoins */
+    min-height: 60vh;
     text-align: center;
     background: var(--section-bg);
     margin: 0 auto;
@@ -118,7 +161,7 @@ section {
 
 /* Logo dans la section Hero */
 .hero-logo {
-    width: 250px; /* Taille ajustée pour les grands écrans */
+    width: 250px;
     height: auto;
     margin: 20px 0;
 }
@@ -153,8 +196,8 @@ ul, ol {
 
 /* Boutons */
 .btn, button {
-    display: block; /* Rend le bouton un bloc */
-    margin: 20px auto; /* Centre horizontalement le bouton */
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
     color: var(--text-light);
     background-color: var(--accent-color);
@@ -164,7 +207,7 @@ ul, ol {
     transition: background-color 0.3s, transform 0.3s;
     text-decoration: none;
     font-size: 1em;
-    text-align: center; /* Centre le texte dans le bouton */
+    text-align: center;
 }
 
 .btn:hover, button:hover {
@@ -182,12 +225,12 @@ ul, ol {
 }
 
 .team-member img {
-    width: 150px; /* Taille standard pour toutes les images */
-    height: 150px; /* Hauteur standard */
-    object-fit: cover; /* Recadre l'image sans la déformer */
-    border-radius: 50%; /* Images rondes */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre esthétique */
-    margin-bottom: 10px; /* Espace entre l'image et le texte */
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
 }
 
 .team-member h3 {
@@ -216,20 +259,6 @@ footer {
     padding: 15px 20px;
     text-align: center;
     font-size: 0.9em;
-}
-
-footer .reseaux-sociaux {
-    margin-top: 10px;
-}
-
-.reseaux-sociaux a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.reseaux-sociaux img.social-icon {
-    width: 30px;
-    height: 30px;
 }
 
 /* Formulaires */
@@ -276,62 +305,14 @@ form button {
     width: 100%;
 }
 
-/* Media Queries */
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Afficher le bouton hamburger */
-    .hamburger {
-        display: block;
+    .nav-menu ul li a {
+        font-size: 1.3em;
     }
 
-    /* Cacher le menu de navigation par défaut */
-    nav {
-        position: fixed; /* Position fixe pour que le menu reste visible */
-        top: 60px; /* Ajustez selon la hauteur du header */
-        left: 0;
-        width: 100%;
-        background-color: var(--main-blue);
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1002; /* Assure que le menu est au-dessus du hamburger */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre pour séparer visuellement le menu */
-        transition: all 0.3s ease; /* Transition pour l'affichage du menu */
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    nav ul li a {
-        display: block;
-        width: 100%;
-        padding: 15px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: center;
-    }
-
-    nav ul li:first-child a {
-        border-top: none;
-    }
-
-    /* Lorsque le menu est actif */
-    nav.active {
-        display: flex;
-    }
-
-    /* Ajustements des logos */
     .hero-logo {
-        width: 250px;
-    }
-
-    /* Amélioration du curseur */
-    .hamburger:hover {
-        color: var(--accent-color);
+        width: 200px;
     }
 }
 
@@ -353,21 +334,15 @@ form button {
     }
 
     .hero {
-        min-height: auto; /* S'adapte sur les petits écrans */
+        min-height: auto;
         padding: 50px 20px;
     }
 
     .hero-logo {
-        width: 150px; /* Taille réduite pour les petits écrans */
+        width: 150px;
     }
 
-    nav ul {
-        padding: 10px 0;
+    .nav-menu ul li a {
+        font-size: 1.2em;
     }
-}
-
-/* Animation du bouton hamburger lorsqu'il est actif */
-.hamburger.active .fa-bars {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
 }

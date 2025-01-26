@@ -1,47 +1,64 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-    // Gestion du bouton hamburger
+    // Sélection des éléments
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
+    const navMenu = document.querySelector('.nav-menu');
+    const closeMenuButton = document.querySelector('.close-menu');
 
-    if (hamburger && nav) {
-        // Fonction pour toggler le menu
-        const toggleMenu = () => {
-            console.log('Toggle menu called'); // Debug log
-            nav.classList.toggle('active');
-            hamburger.classList.toggle('active');
-
-            // Mettre à jour l'attribut aria-expanded
-            const isExpanded = nav.classList.contains('active');
-            hamburger.setAttribute('aria-expanded', isExpanded);
+    if (hamburger && navMenu && closeMenuButton) {
+        // Fonction pour ouvrir le menu
+        const openMenu = () => {
+            navMenu.classList.add('active');
+            hamburger.setAttribute('aria-expanded', 'true');
+            console.log('Menu ouvert');
         };
 
-        // Click event
-        hamburger.addEventListener('click', toggleMenu);
+        // Fonction pour fermer le menu
+        const closeMenu = () => {
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            console.log('Menu fermé');
+        };
 
-        // Keyboard accessibility (Enter and Space)
+        // Événement clic sur le hamburger pour ouvrir le menu
+        hamburger.addEventListener('click', openMenu);
+
+        // Événement clic sur le bouton de fermeture pour fermer le menu
+        closeMenuButton.addEventListener('click', closeMenu);
+
+        // Accessibilité clavier (Entrée et Espace) pour ouvrir le menu
         hamburger.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                toggleMenu();
+                openMenu();
             }
         });
 
-        // Optionnel : Fermer le menu lorsqu'un lien est cliqué (sur mobile)
-        const navLinks = document.querySelectorAll('.nav-links li a');
+        // Accessibilité clavier (Entrée et Espace) pour fermer le menu
+        closeMenuButton.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                closeMenu();
+            }
+        });
+
+        // Fermer le menu lorsqu'un lien est cliqué
+        const navLinks = document.querySelectorAll('.nav-menu ul li a');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    hamburger.classList.remove('active');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    console.log('Menu fermé après clic sur un lien');
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fermer le menu en cliquant en dehors (facultatif)
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                if (navMenu.classList.contains('active')) {
+                    closeMenu();
                 }
-            });
+            }
         });
     } else {
-        console.warn('Hamburger ou navigation non trouvé');
+        console.warn('Éléments du menu non trouvés');
     }
 
     // Gestion du formulaire de contact
