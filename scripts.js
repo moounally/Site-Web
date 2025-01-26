@@ -1,176 +1,131 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
+$(document).ready(function() {
+    // Ouvrir le menu de navigation mobile
+    $('#header__icon').on('click', function() {
+        $('.nav-menu').addClass('active').fadeIn(300);
+        $(this).attr('aria-expanded', 'true');
+    });
 
-    // Sélection des éléments
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const closeMenuButton = document.querySelector('.close-menu');
+    // Fermer le menu de navigation mobile
+    $('#close__icon').on('click', function() {
+        $('.nav-menu').removeClass('active').fadeOut(300);
+        $('#header__icon').attr('aria-expanded', 'false');
+    });
 
-    if (hamburger && navMenu && closeMenuButton) {
-        // Fonction pour ouvrir le menu
-        const openMenu = () => {
-            navMenu.classList.add('active');
-            hamburger.setAttribute('aria-expanded', 'true');
-            console.log('Menu ouvert');
-        };
+    // Fermer le menu en cliquant sur un lien
+    $('.nav-menu ul li a').on('click', function() {
+        $('.nav-menu').removeClass('active').fadeOut(300);
+        $('#header__icon').attr('aria-expanded', 'false');
+    });
 
-        // Fonction pour fermer le menu
-        const closeMenu = () => {
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            console.log('Menu fermé');
-        };
-
-        // Événement clic sur le hamburger pour ouvrir le menu
-        hamburger.addEventListener('click', openMenu);
-
-        // Événement clic sur le bouton de fermeture pour fermer le menu
-        closeMenuButton.addEventListener('click', closeMenu);
-
-        // Accessibilité clavier (Entrée et Espace) pour ouvrir le menu
-        hamburger.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openMenu();
+    // Fermer le menu en cliquant en dehors du menu
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.nav-menu, #header__icon').length) {
+            if ($('.nav-menu').hasClass('active')) {
+                $('.nav-menu').removeClass('active').fadeOut(300);
+                $('#header__icon').attr('aria-expanded', 'false');
             }
-        });
+        }
+    });
 
-        // Accessibilité clavier (Entrée et Espace) pour fermer le menu
-        closeMenuButton.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                closeMenu();
+    // Fermer le menu avec la touche Échap
+    $(document).on('keydown', function(event) {
+        if (event.key === "Escape") {
+            if ($('.nav-menu').hasClass('active')) {
+                $('.nav-menu').removeClass('active').fadeOut(300);
+                $('#header__icon').attr('aria-expanded', 'false');
             }
-        });
-
-        // Fermer le menu lorsqu'un lien est cliqué
-        const navLinks = document.querySelectorAll('.nav-menu ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // Fermer le menu en cliquant en dehors (facultatif)
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-                if (navMenu.classList.contains('active')) {
-                    closeMenu();
-                }
-            }
-        });
-    } else {
-        console.warn('Éléments du menu non trouvés');
-    }
+        }
+    });
 
     // Gestion du formulaire de contact
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault(); // Empêche l'envoi par défaut du formulaire
 
-    if (contactForm && formMessage) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêche l'envoi par défaut du formulaire
-
-            // Envoi des données via Fetch API
-            const formData = new FormData(contactForm);
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    Accept: 'application/json'
-                }
-            })
-                .then((response) => {
-                    if (response.ok) {
-                        formMessage.innerHTML = `
-                            <p>Merci pour votre message ! Nous reviendrons vers vous très bientôt.</p>
-                        `;
-                        formMessage.classList.add('success');
-                        formMessage.classList.remove('error');
-                        formMessage.style.display = 'block';
-                        contactForm.reset(); // Réinitialise le formulaire
-                        console.log('Formulaire de contact envoyé avec succès');
-                    } else {
-                        throw new Error('Erreur serveur');
-                    }
-                })
-                .catch(() => {
-                    formMessage.innerHTML = `
-                        <p>Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.</p>
-                    `;
-                    formMessage.classList.add('error');
-                    formMessage.classList.remove('success');
-                    formMessage.style.display = 'block';
-                    console.error('Erreur lors de l\'envoi du formulaire de contact');
-                });
+        // Envoi des données via Fetch API
+        var formData = new FormData(this);
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(function(response) {
+            if (response.ok) {
+                $('#form-message').html('<p>Merci pour votre message ! Nous reviendrons vers vous très bientôt.</p>')
+                                 .addClass('success').removeClass('error').fadeIn();
+                $('#contact-form')[0].reset(); // Réinitialise le formulaire
+                console.log('Formulaire de contact envoyé avec succès');
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        })
+        .catch(function(error) {
+            $('#form-message').html('<p>Oups ! Une erreur s\'est produite. Veuillez réessayer plus tard.</p>')
+                             .addClass('error').removeClass('success').fadeIn();
+            console.error('Erreur lors de l\'envoi du formulaire de contact');
         });
-    }
+    });
 
     // Gestion du formulaire de témoignage (connecté à Formspree)
-    const temoignageForm = document.getElementById('temoignage-form');
+    $('#temoignage-form').on('submit', function(e) {
+        e.preventDefault(); // Empêche le rechargement de la page
 
-    if (temoignageForm) {
-        temoignageForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêche le rechargement de la page
-
-            // Envoi des données via Formspree
-            const formData = new FormData(temoignageForm);
-            fetch(temoignageForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    Accept: 'application/json'
-                }
-            })
-                .then((response) => {
-                    if (response.ok) {
-                        alert("Merci pour votre témoignage ! Nous l'avons bien reçu.");
-                        temoignageForm.reset(); // Réinitialise le formulaire
-                        console.log('Formulaire de témoignage envoyé avec succès');
-                    } else {
-                        throw new Error('Erreur serveur');
-                    }
-                })
-                .catch(() => {
-                    alert("Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.");
-                    console.error('Erreur lors de l\'envoi du formulaire de témoignage');
-                });
+        // Envoi des données via Formspree
+        var formData = new FormData(this);
+        fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(function(response) {
+            if (response.ok) {
+                alert("Merci pour votre témoignage ! Nous l'avons bien reçu.");
+                $('#temoignage-form')[0].reset(); // Réinitialise le formulaire
+                console.log('Formulaire de témoignage envoyé avec succès');
+            } else {
+                throw new Error('Erreur serveur');
+            }
+        })
+        .catch(function(error) {
+            alert("Oups ! Une erreur s'est produite. Veuillez réessayer plus tard.");
+            console.error('Erreur lors de l\'envoi du formulaire de témoignage');
         });
-    }
+    });
 
     // Gestion du quiz de simulation
-    const quizSimulationForm = document.getElementById('quiz-simulation-form');
-    const quizSimulationResult = document.getElementById('quiz-simulation-result');
+    $('#quiz-simulation-form').on('submit', function(e) {
+        e.preventDefault();
 
-    if (quizSimulationForm && quizSimulationResult) {
-        quizSimulationForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        // Les réponses correctes
+        var correctAnswers = {
+            'image1-answer': 'calculatrice',
+            'image2-answer': 'bouteille_eau',
+            'image3-answer': 'clef',
+            'image4-answer': 'trousse'
+        };
 
-            // Les réponses correctes
-            const correctAnswers = {
-                'image1-answer': 'calculatrice',
-                'image2-answer': 'bouteille_eau',
-                'image3-answer': 'clef',
-                'image4-answer': 'trousse'
-            };
+        var score = 0;
 
-            let score = 0;
-
-            // Vérification des réponses utilisateur
-            Object.keys(correctAnswers).forEach((questionId) => {
-                const userAnswer = quizSimulationForm[questionId]?.value.trim().toLowerCase();
-                if (userAnswer === correctAnswers[questionId]) {
-                    score++;
-                }
-            });
-
-            // Affichage des résultats
-            quizSimulationResult.innerHTML = `
-                <p>Votre score : ${score}/4</p>
-                ${score === 4 
-                    ? '<p>Félicitations, vous avez tout juste !</p>' 
-                    : '<p>Essayez encore pour améliorer votre score.</p>'}
-            `;
-            quizSimulationResult.style.display = 'block';
-            console.log(`Quiz terminé avec un score de ${score}/4`);
+        // Vérification des réponses utilisateur
+        $.each(correctAnswers, function(questionId, answer) {
+            var userAnswer = $('#' + questionId).val().trim().toLowerCase();
+            if (userAnswer === answer) {
+                score++;
+            }
         });
-    }
+
+        // Affichage des résultats
+        var resultText = '<p>Votre score : ' + score + '/4</p>';
+        if (score === 4) {
+            resultText += '<p>Félicitations, vous avez tout juste !</p>';
+        } else {
+            resultText += '<p>Essayez encore pour améliorer votre score.</p>';
+        }
+
+        $('#quiz-simulation-result').html(resultText).fadeIn();
+        console.log('Quiz terminé avec un score de ' + score + '/4');
+    });
 });

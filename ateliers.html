@@ -5,27 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ateliers - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <!-- Font Awesome pour les icônes du hamburger -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header avec Logo et Bouton Hamburger -->
     <header>
-        <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="container">
+            <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
+            <button id="header__icon" class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Menu de Navigation Desktop -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="ateliers.html">Ateliers</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="ressources.html">Ressources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="presentation.html">Présentation</a></li>
-                <li><a href="equipe.html">Équipe</a></li>
-                <li><a href="ateliers.html">Ateliers</a></li>
-                <li><a href="temoignages.html">Témoignages</a></li>
-                <li><a href="ressources.html">Ressources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>

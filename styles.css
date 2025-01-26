@@ -32,7 +32,7 @@ body {
 header {
     width: 100%;
     background-color: var(--main-blue);
-    padding: 5px 10px;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
@@ -56,7 +56,7 @@ header .logo {
 
 /* Bouton Hamburger */
 .hamburger {
-    display: block; /* Toujours visible */
+    display: none; /* Caché par défaut, affiché sur mobile */
     font-size: 1.5em;
     color: var(--text-light);
     background: none;
@@ -73,7 +73,28 @@ header .logo {
     color: var(--accent-color);
 }
 
-/* Menu de Navigation */
+/* Navigation Desktop */
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.desktop-nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border-radius: 5px;
+}
+
+/* Menu de Navigation Mobile */
 .nav-menu {
     position: fixed;
     top: 0;
@@ -131,7 +152,7 @@ header .logo {
 /* Contenu principal */
 main {
     flex: 1;
-    padding: 100px 20px 20px; /* Compense la hauteur fixe du header */
+    padding: 80px 20px 20px; /* Compense la hauteur fixe du header */
     width: 100%;
 }
 
@@ -243,6 +264,17 @@ form input, form textarea, form select {
     border-radius: 5px;
 }
 
+/* Styles pour les images responsives */
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Ajoute un espacement vertical et centre l'image */
+    border-radius: 10px; /* Optionnel : ajoute des coins arrondis */
+    box-shadow: var(--box-shadow); /* Optionnel : ajoute une ombre pour un effet visuel */
+}
+
+/* Quiz */
 .quiz-item {
     margin-bottom: 20px;
     text-align: center;
@@ -268,14 +300,88 @@ form button {
     width: 100%;
 }
 
+/* Grid Équipe */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member {
+    background: var(--section-bg);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 150px; /* Taille standard pour toutes les images */
+    height: 150px; /* Hauteur standard */
+    object-fit: cover; /* Recadre l'image sans la déformer */
+    border-radius: 50%; /* Images rondes */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre esthétique */
+    margin-bottom: 10px; /* Espace entre l'image et le texte */
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: var(--main-blue);
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #555;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Afficher le bouton hamburger sur mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Cacher la navigation desktop sur mobile */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Ajuster les liens du menu mobile */
     .nav-menu ul li a {
         font-size: 1.3em;
     }
 
     .hero-logo {
         width: 200px;
+    }
+
+    /* Ajustements pour l'équipe sur tablettes */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .team-member img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .team-member h3 {
+        font-size: 1.1em;
+    }
+
+    .team-member p {
+        font-size: 0.85em;
     }
 }
 
@@ -307,5 +413,24 @@ form button {
 
     .nav-menu ul li a {
         font-size: 1.2em;
+    }
+
+    /* Ajustements pour l'équipe sur petits écrans */
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .team-member h3 {
+        font-size: 1em;
+    }
+
+    .team-member p {
+        font-size: 0.9em;
     }
 }

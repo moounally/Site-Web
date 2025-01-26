@@ -13,15 +13,27 @@
     <header>
         <div class="container">
             <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
-            <button class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+            <button id="header__icon" class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
+            <!-- Menu de Navigation Desktop -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="ateliers.html">Ateliers</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="ressources.html">Ressources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Menu de Navigation -->
-    <nav class="nav-menu">
-        <button class="close-menu" aria-label="Fermer le menu de navigation">
+    <!-- Menu de Navigation Mobile -->
+    <nav id="nav" class="nav-menu">
+        <button id="close__icon" class="close-menu" aria-label="Fermer le menu de navigation">
             <i class="fas fa-times"></i>
         </button>
         <ul>
@@ -56,6 +68,9 @@
     </footer>
 
     <!-- JavaScript pour le menu hamburger -->
+    <!-- Inclure jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Votre script -->
     <script src="scripts.js"></script>
 </body>
 </html>
