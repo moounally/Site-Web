@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Démos - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
     <!-- Font Awesome pour les icônes du hamburger -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inclure jQuery avant scripts.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <!-- Votre script -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Header avec Logo et Bouton Hamburger -->
@@ -97,7 +100,7 @@
             </form>
 
             <!-- Section résultat -->
-            <div id="quiz-simulation-result" class="result"></div>
+            <div id="quiz-simulation-result" class="result" style="display: none;"></div>
         </section>
     </main>
 

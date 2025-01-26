@@ -128,4 +128,32 @@ $(document).ready(function() {
         $('#quiz-simulation-result').html(resultText).fadeIn();
         console.log('Quiz terminé avec un score de ' + score + '/4');
     });
+
+
+    // Gestion du quiz sur le nombre de handicap visuel
+    $('#quiz-form').on('submit', function(e) {
+        e.preventDefault();
+        console.log('Quiz nombre de handicap visuel soumis'); // Vérifie si l'événement est déclenché
+
+        // La réponse correcte
+        var correctAnswer = 'a3'; // Valeur de l'option "250 millions"
+
+        // Récupérer la réponse de l'utilisateur
+        var userAnswer = $('input[name="q1"]:checked').val();
+        console.log('Réponse utilisateur: ' + userAnswer);
+
+        // Affichage des résultats
+        var resultText = '';
+
+        if (userAnswer === correctAnswer) {
+            resultText = '<p>Bonne réponse ! 250 millions de personnes sont concernées par le handicap visuel dans le monde.</p>';
+        } else {
+            // Trouver le texte de l'option correcte
+            var correctLabel = $('input[name="q1"][value="' + correctAnswer + '"]').next('label').text();
+            resultText = '<p>Mauvaise réponse. La bonne réponse est : ' + correctLabel + '.</p>';
+        }
+
+        $('#quiz-result').html(resultText).fadeIn();
+        console.log('Quiz nombre de handicap visuel terminé');
+    });
 });

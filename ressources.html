@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome pour les icônes du hamburger -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inclure jQuery avant scripts.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <!-- Votre script -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Header avec Logo et Bouton Hamburger -->
@@ -53,19 +57,19 @@
             <form id="quiz-form" aria-label="Quiz sur le handicap visuel">
                 <p>1. Combien de personnes sont concernées par le handicap visuel dans le monde ?</p>
                 <input type="radio" id="q1a1" name="q1" value="a1" required>
-                <label for="q1a1">250 millions</label><br>
+                <label for="q1a1">50 millions</label><br>
                 <input type="radio" id="q1a2" name="q1" value="a2">
-                <label for="q1a2">500 millions</label><br>
+                <label for="q1a2">100 millions</label><br>
                 <input type="radio" id="q1a3" name="q1" value="a3">
-                <label for="q1a3">1 milliard</label><br>
+                <label for="q1a3">250 millions</label><br>
                 <input type="radio" id="q1a4" name="q1" value="a4">
-                <label for="q1a4">2,2 milliards</label><br><br>
+                <label for="q1a4">1 milliard</label><br><br>
 
                 <!-- Ajoutez d'autres questions selon besoin -->
 
                 <button type="submit" class="btn">Soumettre</button>
             </form>
-            <div id="quiz-result"></div>
+            <div id="quiz-result" class="result" style="display: none;"></div>
         </section>
 
         <!-- Problèmes et solutions liés au handicap visuel -->
