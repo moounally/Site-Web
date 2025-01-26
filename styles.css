@@ -80,7 +80,7 @@ header .logo {
     left: -100%; /* Masqué par défaut */
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -213,43 +213,6 @@ ul, ol {
 .btn:hover, button:hover {
     background-color: var(--button-hover);
     transform: scale(1.05);
-}
-
-/* Grid Équipe */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    text-align: center;
-    margin: 20px;
-}
-
-.team-member img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-}
-
-.team-member h3 {
-    margin: 10px 0 5px;
-    font-size: 1.2em;
-    color: var(--main-blue);
-}
-
-.team-member p {
-    font-size: 0.9em;
-    color: #555;
-}
-
-/* Images Responsives */
-.responsive-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 10px;
 }
 
 /* Footer */
