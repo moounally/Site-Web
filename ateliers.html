@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome pour les icônes du hamburger -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Inclure jQuery avant scripts.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <!-- Votre script -->
+    <script src="scripts.js" defer></script>
+
 </head>
 <body>
     <!-- Header avec Logo et Bouton Hamburger -->
@@ -30,6 +35,22 @@
             </nav>
         </div>
     </header>
+
+    <!-- Menu de Navigation Mobile -->
+    <nav id="nav" class="nav-menu">
+        <button id="close__icon" class="close-menu" aria-label="Fermer le menu de navigation">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="equipe.html">Équipe</a></li>
+            <li><a href="ateliers.html">Ateliers</a></li>
+            <li><a href="temoignages.html">Témoignages</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="ateliers-header">
