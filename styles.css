@@ -58,7 +58,7 @@ header .logo {
 .hamburger {
     display: none; /* Masqué sur les écrans larges */
     position: absolute;
-    top: 15px; /* Ajustez pour le placer verticalement */
+    top: 0px; /* Ajustez pour le placer verticalement */
     right: 20px; /* Aligne le bouton à droite */
     font-size: 1.8em;
     color: var(--text-light);
