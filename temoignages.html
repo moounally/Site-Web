@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Témoignages - T'as Pas Vu Venir</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome pour les icônes du hamburger -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Inclure jQuery avant scripts.js -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <!-- Votre script -->
     <script src="scripts.js" defer></script>
+    
 </head>
 <body>
-    <!-- Header avec Logo et Bouton Hamburger -->
     <header>
         <div class="container">
             <img src="images/logo.jpg" alt="Logo T'as Pas Vu Venir" class="logo">
             <button id="header__icon" class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
-            <!-- Menu de Navigation Desktop -->
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
@@ -34,8 +30,6 @@
             </nav>
         </div>
     </header>
-
-
 
     <!-- Menu de Navigation Mobile -->
     <nav id="nav" class="nav-menu">
@@ -53,36 +47,49 @@
         </ul>
     </nav>
 
-    
-
     <main>
         <section class="temoignages-header">
             <h1>Témoignages</h1>
             <p>Découvrez les retours des participants ayant testé notre jeu.</p>
         </section>
-        
-        <!-- Section statique pour les témoignages existants -->
+
         <section id="temoignages-list">
             <section class="temoignage">
-                <h2>Jean-Marie LEPEN</h2>
-                <video controls class="responsive-img">
-                    <source src="assets/videos/jean-dupont.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture des vidéos.
-                </video>
-                <p>"Participer à ce jeu m'a ouvert les yeux sur les défis quotidiens des personnes malvoyantes."</p>
+                <h2>Yannis LOUMOUAMOU <span style="font-size: 0.9em; color: #666;">(Animateur)</span></h2>
+                <p><strong>Objectifs atteints :</strong> Joueur sain et sauf.</p>
+                <p><strong>Phases de jeu :</strong> Déposer l'objet dans le carton, trouver la bouteille et verser l'eau dans le gobelet.</p>
+                <p><strong>Conseils :</strong> Ajouter des obstacles, éloigner l'animateur du joueur.</p>
             </section>
-        
+
             <section class="temoignage">
-                <h2>Marie Curie</h2>
-                <video controls class="responsive-img">
-                    <source src="assets/videos/marie-curie.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture des vidéos.
-                </video>
-                <p>"Une expérience enrichissante qui sensibilise de manière ludique."</p>
+                <h2>Alann HOAREAU <span style="font-size: 0.9em; color: #666;">(Animateur)</span></h2>
+                <p><strong>Objectifs atteints :</strong> Oui.</p>
+                <p><strong>Phases de jeu :</strong> Amener un objet dans un carton, remplir un verre d'eau, reconnaître des objets.</p>
+                <p><strong>Conseils :</strong> Ajouter des cartons pour augmenter la difficulté.</p>
+            </section>
+
+            <section class="temoignage">
+                <h2>Oussama RIAHI <span style="font-size: 0.9em; color: #666;">(Joueur)</span></h2>
+                <p><strong>Ce que j'ai appris :</strong> Les défis quotidiens des personnes aveugles.</p>
+                <p><strong>Comment je me suis senti :</strong> Bien amusé.</p>
+                <p><strong>Conseils :</strong> Rendre les étapes plus difficiles.</p>
+            </section>
+
+            <section class="temoignage">
+                <h2>Adrian COUVENT <span style="font-size: 0.9em; color: #666;">(Joueur)</span></h2>
+                <p><strong>Ce que j'ai appris :</strong> Se déplacer avec une vision limitée.</p>
+                <p><strong>Comment je me suis senti :</strong> Amusé et en sécurité.</p>
+                <p><strong>Conseils :</strong> Éloigner la personne pour éviter l'écho-localisation.</p>
+            </section>
+
+            <section class="temoignage">
+                <h2>Iman PENDELIAU <span style="font-size: 0.9em; color: #666;">(Joueur)</span></h2>
+                <p><strong>Ce que j'ai appris :</strong> Les contraintes rendent les tâches quotidiennes difficiles.</p>
+                <p><strong>Comment je me suis senti :</strong> Amusé avec les yeux bandés dans une pièce inconnue.</p>
+                <p><strong>Conseils :</strong> Plus d'informations sur les handicaps et une visite préalable de la pièce.</p>
             </section>
         </section>
-        
-        <!-- Formulaire de témoignage connecté à Formspree -->
+
         <section class="partage">
             <h2>Partagez votre expérience</h2>
             <form id="temoignage-form" action="https://formspree.io/f/xgvovdlz" method="POST" aria-label="Formulaire de témoignage">
@@ -105,7 +112,6 @@
                 <button type="submit" class="btn">Partager</button>
             </form>
         </section>
-    
 
         <section class="associations">
             <h2>Nos Partenaires</h2>
@@ -121,7 +127,6 @@
                 </a>
                 <p>UNADEV - Promouvant l'accessibilité et l'inclusion pour tous.</p>
             </div>
-            <!-- Ajoutez d'autres associations si nécessaire -->
         </section>
     </main>
 
